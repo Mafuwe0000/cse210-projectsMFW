@@ -9,37 +9,39 @@ class Program
         string userName = PromptUserName();
         int userNumber = PromptUserNumber();
 
-        int squaredNumber = squaredNumber (userNumber);
+        int squaredNumber = SquareNumber(userNumber);
 
-        DisplayResult (userName,squaredNumber);
+        DisplayResult(userName, squaredNumber);
     }
 
-    static void DisplayWelcomeMessage();
+    static void DisplayWelcomeMessage()
     {
-        Console.WriteLine("Welcome to Mafuwe's program!");
+        Console.WriteLine("Welcome to the program!");
     }
 
     static string PromptUserName()
     {
         Console.Write("Please enter your name: ");
-        string name=.Console.Readline();
+        string name = Console.ReadLine();
 
         return name;
     }
-        static int PromptUserNumber()
+
+    static int PromptUserNumber()
     {
         Console.Write("Please enter your favorite number: ");
-        int number=int.Parse(Console.Readline());
+        int number = int.Parse(Console.ReadLine());
 
         return number;
     }
-        static int SquareNumber(int number)
-    {
-        int square= number * number;
 
+    static int SquareNumber(int number)
+    {
+        int square = number * number;
         return square;
     }
-     static void DisplayResult(string name , int square);
+
+    static void DisplayResult(string name, int square)
     {
         Console.WriteLine($"{name}, the square of your number is {square}");
     }
