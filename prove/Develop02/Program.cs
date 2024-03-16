@@ -8,80 +8,49 @@ class Program
     static void Main(string[] args)
     {
         
+    Console.WriteLine("Welcome to the Journal Program");
+    string filepath = "journal.txt";
     
-       public string Journal()
-       {
-            
-            public string _entries ="";
-            
-            public string void AddEntry (newEntry, Entry)
-            {
-                
-            }
+    Journal myJournal = new Journal(filepath);
+      while (true)
+      {
+        var random = new Random();
+        var list = new List<string> {"What was your favorite part of the day?", "List three goals that you successfuly attained today", "What did you learnt today?", "What happened today", "What was the most interesting thing You Saw or Heard Today?", "What are you grateful for today?", "How can you describe your day?","What about write something for your posterity?"};
+        int index = random.Next(list.Count);
 
-
-            public void DisplayAll()
-             
-            {
-               /// List<string> menu = new menu List<string>;
-                
-                ///{
-                ///new menu ("Write");
-                ///new menu ( "Display" )
-                ///new menu ( "Load" )
-                ///new menu ("Save" )
-                ///new menu ("Quit", ()=> Environment.Exit(0))  
-                ///}
-                
-                Console.WriteLine("Menu"); 
-                Console.WriteLine("1. Display");
-                Console.WriteLine("2. Load");
-                Console.WriteLine("3. Save");
-                Console.WriteLine("4. Quit");
-
-                int menuSelection = Console.Readline(menuSelection);
-
-                if (menuSelection ==1)
-                {
-                  Console.WriteLine(" Estas quase la...")  
-                }
-                if (menuSelection ==2)
-                {
-                    
-                }  
-                if (menuSelection ==3)
-                {
-                    
-                }  
-                if (menuSelection ==4)
-                {
-                    
-                }                
-            }
-
-
-        public string void SavedToAFile()
-            {
-                Console.WriteLine("What name should we save this file??");
-
-                string responseFromUser = Console.Readline(responseFromUser);
-            }
-             
-        public string void  LoadingFromAFile()
-            {
-                Console.WriteLine("What file? do you need to see?");
-
-                string responseFromUser = Console.Readline(responseFromUser);
-            }       
-        
-        
-       }
-        
-
-        
-
-       
+        Console.WriteLine(list[index]);
     
-    
+      
+        Console.WriteLine("\n 1. Write: \n 2.Load \n 3.Save \n 4. Quit ");
+        Console.WriteLine("Please select one of the following choices:");
+        string menuSelection = Console.ReadLine();
+        if (menuSelection =="1")
+        {
+            Console.WriteLine(" Feel free to write what made your day today:");
+            string answer = Console.ReadLine();
+            myJournal.AddEntry(answer) ;
+        }
+        else if (menuSelection =="2")
+        {
+            Console.WriteLine("What file do you want to be loaded?");
+            string loadingAnswer = Console.ReadLine();
+            myJournal.LoadingFromAFile(loadingAnswer);
+        }  
+        else if (menuSelection =="3")
+        {
+            Console.WriteLine("What do you want to be saved?");
+            string savedAnswers = Console.ReadLine();
+            myJournal.SavedToAFile(savedAnswers);
+        }  
+        else if (menuSelection =="4")
+        {
+            Console.WriteLine("Exiting from my journal App");
+            return;
+        }
+        else
+        {
+            Console.WriteLine("Please make a different choice");
+        }
+      }  
+    }   
     }
-}

@@ -1,15 +1,20 @@
+using System;
+using System.Collections.Generic;
+
 public class PromptGenerator
 {
-    public List<string> randomPrompt = new List<string>() = 
-    {
-        "What was your favorite part of the day?", "List three goals that you successfuly attained today", "What did you learnt today?", "What happened today", "What was the most interesting thing You Saw or Heard Today?", "What are you grateful for today?", "How can you describe your day?","What about write something for your posterity?"
-    }
 
 
-    public string GetRandomPrompt ()
+    public void Display()
     {
-        public Random new = new ()
+        var random = new Random();
+        var list = new List<string> {"What was your favorite part of the day?", "List three goals that you successfuly attained today", "What did you learnt today?", "What happened today", "What was the most interesting thing You Saw or Heard Today?", "What are you grateful for today?", "How can you describe your day?","What about write something for your posterity?"};
+        int index = random.Next(list.Count);
+
+        Console.WriteLine(list[index]);
     }
+        
+        ///https://www.tutorialspoint.com/compile_csharp_online.php
 }
 
 // CLASS STRUCTURE
